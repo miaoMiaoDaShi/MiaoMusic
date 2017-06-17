@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flPlayBar"
+    android:layout_width="match_parent"
+    android:layout_height="120px"
+    android:background="@drawable/btn_action_bg_selector">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorPrimary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/ivPlayBarCover"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPlayParTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="无音乐"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvPlayBarArtist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="喵喵音乐感受极致!"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPlayBarPlay"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_play" />
+
+        <ImageView
+            android:id="@+id/iv_play_bar_next"
+            android:padding="10px"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_play_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="bottom"
+        android:progressDrawable="@drawable/progress_bar_style" />
+</FrameLayout>

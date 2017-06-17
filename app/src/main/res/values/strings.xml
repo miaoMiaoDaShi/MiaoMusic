@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">喵喵音乐</string>
+    <string name="copyright">Copyright © 2017 Zcoder. All Rights Reserved.</string>
+    <string name="github">https://github.com/miaoMiaoDaShi</string>
+    <string name="give_star">https://github.com/miaoMiaoDaShi/MiaoMusic</string>
+    <string name="email">1340751953@qq.com</string>
+    <array name="nav_title">
+        <item>首页</item>
+        <item>分类</item>
+        <item>搜索</item>
+        <item>我的</item>
+    </array>
+</resources>
