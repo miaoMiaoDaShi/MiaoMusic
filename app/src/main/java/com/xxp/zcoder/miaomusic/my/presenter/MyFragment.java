@@ -1,5 +1,6 @@
 package com.xxp.zcoder.miaomusic.my.presenter;
 
+import com.xxp.zcoder.miaomusic.adapter.MultiRVAdapter;
 import com.xxp.zcoder.miaomusic.my.model.MyModelImpl;
 import com.xxp.zcoder.miaomusic.my.view.MyDeletegate;
 import com.xxp.zcoder.mvp.presenter.FragmentPresenter;
@@ -11,7 +12,14 @@ import com.xxp.zcoder.mvp.presenter.FragmentPresenter;
  * Description :
  */
 
-public class MyFragment extends FragmentPresenter<MyDeletegate, MyModelImpl> {
+public class MyFragment extends FragmentPresenter<MyDeletegate, MyModelImpl> implements MultiRVAdapter.OnItemClickListener {
+
+    @Override
+    protected void bindEvenListener() {
+        super.bindEvenListener();
+        getAppDelegate().setUpRecyclerView(this);
+    }
+
     @Override
     public Class<MyDeletegate> getDelegateClass() {
         return MyDeletegate.class;
@@ -20,5 +28,15 @@ public class MyFragment extends FragmentPresenter<MyDeletegate, MyModelImpl> {
     @Override
     public Class<MyModelImpl> getModelClass() {
         return MyModelImpl.class;
+    }
+
+    @Override
+    public void onClick(int position) {
+
+    }
+
+    @Override
+    public void onLongClick(int position) {
+
     }
 }

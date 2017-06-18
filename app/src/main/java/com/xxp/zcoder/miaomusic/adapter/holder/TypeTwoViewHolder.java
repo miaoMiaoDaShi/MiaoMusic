@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xxp.zcoder.miaomusic.R;
+import com.xxp.zcoder.miaomusic.adapter.MultiRVAdapter;
 import com.xxp.zcoder.miaomusic.entity.HomeInfo;
+import com.xxp.zcoder.miaomusic.entity.MultiInfo;
 
 /**
  * Created by Zcoder
@@ -15,26 +17,22 @@ import com.xxp.zcoder.miaomusic.entity.HomeInfo;
  * Description :
  */
 
-public class TypeTwoViewHolder extends TypeAbstractViewHolder<HomeInfo> {
-    TextView mTvSongOne;
-    TextView mTvSongTwo;
-    TextView mTvSongThree;
-    ImageView mIvSongsImage;
+public class TypeTwoViewHolder extends TypeAbstractViewHolder<MultiInfo> {
+    View mViwe;
+    TextView mTvItemTwoTitle;
+    TextView mTvItemTwoDes;
 
-    public TypeTwoViewHolder(View itemView) {
-        super(itemView);
-        mTvSongOne = (TextView) itemView.findViewById(R.id.tvItemSongListOne);
-        mTvSongTwo = (TextView) itemView.findViewById(R.id.tvItemSongListTwo);
-        mTvSongThree = (TextView) itemView.findViewById(R.id.tvItemSongListThree);
-        mIvSongsImage = (ImageView) itemView.findViewById(R.id.ivItemSongList);
+    public TypeTwoViewHolder(final MultiRVAdapter.OnItemClickListener onItemClickListener, View itemView) {
+        super(onItemClickListener,itemView);
+        mTvItemTwoTitle = (TextView) itemView.findViewById(R.id.tv_item_two_title);
+        mTvItemTwoDes = (TextView) itemView.findViewById(R.id.tv_item_two_des);
+        mViwe = itemView.findViewById(R.id.v_item_two);
 
     }
 
     @Override
-    public void bindHolder(HomeInfo model) {
-        Glide.with(itemView.getContext()).load(model.getImageUrl()).into(mIvSongsImage);
-        mTvSongOne.setText(model.getSongOneTitle());
-        mTvSongTwo.setText(model.getSongTwoTitle());
-        mTvSongThree.setText(model.getSongThreeTitle());
+    public void bindHolder(MultiInfo model) {
+        mTvItemTwoTitle.setText(model.getTitleOne());
+        mTvItemTwoDes.setText(model.getDesOne());
     }
 }

@@ -11,6 +11,7 @@ import com.xxp.zcoder.miaomusic.ZcoderApp;
 import com.xxp.zcoder.miaomusic.adapter.NavViewPagerAdapter;
 import com.xxp.zcoder.miaomusic.entity.MusicInfo;
 import com.xxp.zcoder.miaomusic.home.presenter.HomeFragment;
+import com.xxp.zcoder.miaomusic.my.presenter.MyFragment;
 import com.xxp.zcoder.miaomusic.play.presenter.PlayActivity;
 import com.xxp.zcoder.mvp.view.AppDelegate;
 
@@ -53,7 +54,7 @@ public class NavDelegate extends AppDelegate implements INavDelegate {
         fragment = new HomeFragment();
         adapter.addFragment(fragment);
 
-        fragment = new HomeFragment();
+        fragment = new MyFragment();
         adapter.addFragment(fragment);
 
         viewPager.setAdapter(adapter);

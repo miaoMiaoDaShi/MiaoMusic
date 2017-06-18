@@ -4,7 +4,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.xxp.zcoder.miaomusic.R;
-import com.xxp.zcoder.miaomusic.entity.HomeInfo;
+import com.xxp.zcoder.miaomusic.adapter.MultiRVAdapter;
+import com.xxp.zcoder.miaomusic.entity.MultiInfo;
 
 /**
  * Created by Zcoder
@@ -13,16 +14,21 @@ import com.xxp.zcoder.miaomusic.entity.HomeInfo;
  * Description :
  */
 
-public class TypeOneViewHolder extends TypeAbstractViewHolder<HomeInfo> {
-    TextView mTvTitle;
+public class TypeOneViewHolder extends TypeAbstractViewHolder<MultiInfo> {
+    TextView mTvItemOneTitle;
+    TextView mTvItemOneDes;
+    View mView;
 
-    public TypeOneViewHolder(View itemView) {
-        super(itemView);
-        mTvTitle = (TextView) itemView.findViewById(R.id.tv_item_title);
+    public TypeOneViewHolder(final MultiRVAdapter.OnItemClickListener onItemClickListener, View itemView) {
+        super(onItemClickListener,itemView);
+        mTvItemOneTitle = (TextView) itemView.findViewById(R.id.tv_item_one_title);
+        mTvItemOneDes = (TextView) itemView.findViewById(R.id.tv_item_one_des);
+        mView = itemView.findViewById(R.id.v_item_one_bg);
     }
 
     @Override
-    public void bindHolder(HomeInfo model) {
-        mTvTitle.setText(model.getTitle());
+    public void bindHolder(MultiInfo model) {
+        mTvItemOneTitle.setText(model.getTitleOne());
+        mTvItemOneDes.setText(model.getDesOne());
     }
 }

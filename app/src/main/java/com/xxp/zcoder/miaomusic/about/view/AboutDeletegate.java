@@ -2,7 +2,6 @@ package com.xxp.zcoder.miaomusic.about.view;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xxp.zcoder.miaomusic.R;
@@ -36,14 +35,14 @@ public class AboutDeletegate extends AppDelegate {
                 getActivity()) {
             @Override
             protected int getLayoutId() {
-                return R.layout.item_setting;
+                return R.layout.item_two;
             }
 
             @Override
             protected void bindMyViewHolder(ViewHolder viewHolder, int i) {
-                viewHolder.setText(R.id.tv_item_setting, settingInfos.get(i).getTitle());
-                viewHolder.setText(R.id.tv_item_setting_des, settingInfos.get(i).getDes());
-                viewHolder.setVisible(R.id.iv_item_setting_more, settingInfos.get(i).isShowMoreIc() ?
+                viewHolder.setText(R.id.tv_item_two_title, settingInfos.get(i).getTitle());
+                viewHolder.setText(R.id.tv_item_two_des, settingInfos.get(i).getDes());
+                viewHolder.setVisible(R.id.iv_item_two_more, settingInfos.get(i).isShowMoreIc() ?
                         true : false);
             }
 

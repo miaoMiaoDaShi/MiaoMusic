@@ -4,5 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <include layout="@layout/item_four"/>
+    <include layout="@layout/item_three" />
+    <include layout="@layout/item_two"/>
 </LinearLayout>

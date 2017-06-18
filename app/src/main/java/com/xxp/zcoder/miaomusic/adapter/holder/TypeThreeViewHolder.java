@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xxp.zcoder.miaomusic.R;
+import com.xxp.zcoder.miaomusic.adapter.MultiRVAdapter;
 import com.xxp.zcoder.miaomusic.entity.HomeInfo;
+import com.xxp.zcoder.miaomusic.entity.MultiInfo;
 
 /**
  * Created by Zcoder
@@ -15,47 +17,20 @@ import com.xxp.zcoder.miaomusic.entity.HomeInfo;
  * Description :
  */
 
-public class TypeThreeViewHolder extends TypeAbstractViewHolder<HomeInfo> {
-    ImageView mTvAlbumImageA;
-    ImageView mTvAlbumImageB;
-    ImageView mTvAlbumImageC;
+public class TypeThreeViewHolder extends TypeAbstractViewHolder<MultiInfo> {
 
-    TextView mTvAlbumTitleA;
-    TextView mTvAlbumTitleB;
-    TextView mTvAlbumTitleC;
-    TextView mTvAlbumDesA;
-    TextView mTvAlbumDesB;
-    TextView mTvAlbumDesC;
+    TextView mTvItemThreeTitle;
+    TextView mTvItemThreeDes;
 
-
-    public TypeThreeViewHolder(View itemView) {
-        super(itemView);
-        mTvAlbumImageA = (ImageView) itemView.findViewById(R.id.iv_item_list_grid_a);
-        mTvAlbumImageB = (ImageView) itemView.findViewById(R.id.iv_item_list_grid_b);
-        mTvAlbumImageC = (ImageView) itemView.findViewById(R.id.iv_item_list_grid_c);
-
-        mTvAlbumTitleA = (TextView) itemView.findViewById(R.id.tv_item_list_grid_title_a);
-        mTvAlbumTitleB = (TextView) itemView.findViewById(R.id.tv_item_list_grid_title_b);
-        mTvAlbumTitleC = (TextView) itemView.findViewById(R.id.tv_item_list_grid_title_c);
-
-        mTvAlbumDesA = (TextView) itemView.findViewById(R.id.tv_item_list_grid_des_a);
-        mTvAlbumDesB = (TextView) itemView.findViewById(R.id.tv_item_list_grid_des_b);
-        mTvAlbumDesC = (TextView) itemView.findViewById(R.id.tv_item_list_grid_des_c);
-
+    public TypeThreeViewHolder(final MultiRVAdapter.OnItemClickListener onItemClickListener, View itemView) {
+        super(onItemClickListener,itemView);
+        mTvItemThreeTitle = (TextView) itemView.findViewById(R.id.tv_item_three_title);
+        mTvItemThreeDes = (TextView) itemView.findViewById(R.id.tv_three_des);
     }
 
     @Override
-    public void bindHolder(HomeInfo model) {
-        Glide.with(itemView.getContext()).load(model.getImageUrl()).into(mTvAlbumImageA);
-        Glide.with(itemView.getContext()).load(model.getImageUrl()).into(mTvAlbumImageB);
-        Glide.with(itemView.getContext()).load(model.getImageUrl()).into(mTvAlbumImageC);
-
-        mTvAlbumTitleA.setText(model.getAlbumOneTitle());
-        mTvAlbumTitleB.setText(model.getAlbumTwoTitle());
-        mTvAlbumTitleC.setText(model.getAlbumThreeTitle());
-
-        mTvAlbumDesA.setText(model.getAlbumOnedes());
-        mTvAlbumDesB.setText(model.getAlbumTwodes());
-        mTvAlbumDesC.setText(model.getAlbumThreedes());
+    public void bindHolder(MultiInfo model) {
+        mTvItemThreeTitle.setText(model.getTitleOne());
+        mTvItemThreeDes.setText(model.getDesOne());
     }
 }

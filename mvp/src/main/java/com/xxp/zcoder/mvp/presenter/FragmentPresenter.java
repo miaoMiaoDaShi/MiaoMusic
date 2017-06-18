@@ -36,7 +36,7 @@ public abstract class FragmentPresenter<V extends IDelegate,M extends IModel> ex
         return mDelegate.getRootView();
     }
 
-    private void bindEvenListener() {
+    protected void bindEvenListener() {
 
     }
 

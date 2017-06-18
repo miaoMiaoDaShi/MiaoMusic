@@ -5,8 +5,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.xxp.zcoder.miaomusic.R;
 import com.xxp.zcoder.miaomusic.ZcoderApp;
-import com.xxp.zcoder.miaomusic.adapter.HomeRVAdapter;
+import com.xxp.zcoder.miaomusic.adapter.MultiRVAdapter;
 import com.xxp.zcoder.miaomusic.entity.HomeInfo;
+import com.xxp.zcoder.miaomusic.entity.MultiInfo;
 import com.xxp.zcoder.mvp.view.AppDelegate;
 
 import java.util.ArrayList;
@@ -25,43 +26,38 @@ public class HomeDeletegate extends AppDelegate {
         RecyclerView recyclerView = getView(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(ZcoderApp.getContext(),
                 LinearLayoutManager.VERTICAL, false));
-        List<HomeInfo> homeInfos = getHomeInfos();
-        HomeRVAdapter homeRVAdapter = new HomeRVAdapter(homeInfos, getActivity());
-        recyclerView.setAdapter(homeRVAdapter);
+        List<MultiInfo> multiInfos = getMultiInfos();
+        MultiRVAdapter adapter = new MultiRVAdapter(multiInfos, getActivity());
+        recyclerView.setAdapter(adapter);
     }
 
-    private List<HomeInfo> getHomeInfos() {
-        List<HomeInfo> homeInfos = new ArrayList<>();
+    private List<MultiInfo> getMultiInfos() {
+        List<MultiInfo> multiInfos = new ArrayList<>();
 
-        HomeInfo title1 = new HomeInfo(1, "今日推荐");
-        homeInfos.add(title1);
+        MultiInfo multiInfoA = new MultiInfo("今日推荐歌单(30)", "更多");
 
-        HomeInfo songs = new HomeInfo(2);
-        homeInfos.add(songs);
-        songs.setSongOneTitle("成全-刘若英");
-        songs.setSongTwoTitle("凡人歌-郭金腾");
-        songs.setSongThreeTitle("Layee-pianoboy");
+        MultiInfo multiInfoB = new MultiInfo();
+        multiInfoB.setType(5);
+        multiInfoB.setTitleOne("成全-刘若英");
+        multiInfoB.setTitleTwo("凡人歌-郭金腾");
+        multiInfoB.setTitleThree("Layee-pianoboy");
 
-        HomeInfo title2 = new HomeInfo(1, "新碟首发");
-        homeInfos.add(title2);
+        MultiInfo multiInfoC = new MultiInfo("其他热门(30)", "更多");
 
-        HomeInfo title3 = new HomeInfo(3);
-        title3.setAlbumOneTitle("青春的纪念品");
-        title3.setAlbumOnedes("陈直");
-        title3.setAlbumTwoTitle("他们都走了");
-        title3.setAlbumTwodes("盐池");
-        title3.setAlbumThreeTitle("算了");
-        title3.setAlbumThreedes("崔啊咋");
-        homeInfos.add(title3);
+        MultiInfo multiInfoD = new MultiInfo();
+        multiInfoD.setType(5);
+        multiInfoD.setTitleOne("成全-刘若英");
+        multiInfoD.setTitleTwo("凡人歌-郭金腾");
+        multiInfoD.setTitleThree("Layee-pianoboy");
 
-        HomeInfo title4 = new HomeInfo(3);
-        title4.setAlbumOneTitle("青春的纪念品");
-        title4.setAlbumOnedes("陈直");
-        title4.setAlbumThreeTitle("算了");
-        title4.setAlbumThreedes("崔啊咋");
-        homeInfos.add(title4);
 
-        return homeInfos;
+        multiInfos.add(multiInfoA);
+        multiInfos.add(multiInfoB);
+        multiInfos.add(multiInfoC);
+        multiInfos.add(multiInfoD);
+
+
+        return multiInfos;
     }
 
 

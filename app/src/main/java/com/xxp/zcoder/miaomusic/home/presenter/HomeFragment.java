@@ -25,6 +25,12 @@ public class HomeFragment extends FragmentPresenter<HomeDeletegate, HomeModelImp
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         recover();
+
+    }
+
+    @Override
+    protected void bindEvenListener() {
+        super.bindEvenListener();
     }
 
     /**
